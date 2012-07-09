@@ -3,7 +3,11 @@ define activemq::instance(
   $module_params     = 'UNDEF',
   $module_log4j_tmpl = 'activemq/log4jproperties.erb',
   $module_cred_tmpl  = 'activemq/credentials.properties.erb',
-  $activate          = true
+  $activate          = true,
+  $mc_user           = 'mcollective',
+  $mc_pass           = 't3_b3_chang3d',
+  $admin_user        = 'admin',
+  $admin_pass        = 't0_b3_ch4ng3d'
   ) {
 
   if $::operatingsystem != 'Debian' {
