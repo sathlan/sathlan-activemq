@@ -70,5 +70,5 @@ define activemq::instance(
       stop      => "/etc/init.d/activemq stop-server ${name}",
     }
   }
-  Service["activemq_${name}"] <~ File <|tag == 'activemq_${name}_conf_on'|>
+  Service["activemq_${name}"] <~ File <|tag == "activemq_${name}_conf_on"|>
 }
