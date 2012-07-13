@@ -1,3 +1,4 @@
+<!-- -*- mode: nxml -*- -->
 <!-- HANDLED BY PUPPET -->
 
 <beans
@@ -43,8 +44,8 @@
         </plugins>
         <sslContext>
             <sslContext
-                trustStore="puppet.ts" trustStorePassword="7F3cYLVvuNHr0RKBtrt9iTKb0CM1d2tImjUNfauq"
-                keyStore="mcollective-servers.ks" keyStorePassword="PyHCQCsSTWnX20s56oSXSJmARQbIsEa7HKtc1vsS"/>
+                trustStore="puppet.ts" trustStorePassword="<%= ts_pass -%>"
+                keyStore="mcollective-servers.ks" keyStorePassword="<%= ks_pass -%>"/>
         </sslContext>
 
         <systemUsage>

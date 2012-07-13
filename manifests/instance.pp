@@ -7,7 +7,9 @@ define activemq::instance(
   $mc_user           = 'mcollective',
   $mc_pass           = 't3_b3_chang3d',
   $admin_user        = 'admin',
-  $admin_pass        = 't0_b3_ch4ng3d'
+  $admin_pass        = 't0_b3_ch4ng3d',
+  $ts_pass           = 'UNDEF',
+  $ks_pass           = 'UNDEF',
   ) {
 
   if $::operatingsystem != 'Debian' {
