@@ -27,6 +27,15 @@ define activemq::instance(
   } else {
     $tagging = "activemq_${name}_conf_off"
   }
+  file { "/var/lib/activemq/$name":
+    ensure => directory,
+    owner  => 'root',
+    group  => 'root';
+    "/var/lib/activemq/$name/data":
+    ensure => directory,
+    owner  => 'activemq',
+    group  => 'activemq';
+  }
   file { "$basedir/activemq.xml":
     content => template($module_conf_tmpl),
     ensure  => present,
@@ -53,9 +62,6 @@ define activemq::instance(
   }
   $activemq_var_base = "/var/lib/activemq/$name"
   
-  file { "$activemq_var_base":
-    ensure => directory,
-  }
   file { "$activemq_var_base/conf":
     ensure => directory,
     require => File["$activemq_var_base"]
