@@ -83,4 +83,5 @@ define activemq::instance(
     }
   }
   Service["activemq_${name}"] <~ File <|tag == "activemq_${name}_conf_on"|>
+  Class["activemq::install"] -> File <|tag == "activemq_${name}_conf_on"|>
 }
