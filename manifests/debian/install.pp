@@ -12,7 +12,7 @@ class activemq::debian::install(){
       apt::force { 'activemq':
         release => 'testing',
         version => '5.6.0+dfsg-1',
-        timeout => 1800,
+        timeout => 3600,
         require => Package['openjdk-6-jre-headless']
       }
       # activemq wheezy uid match one of squeeze, so it's not
